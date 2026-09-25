@@ -1,0 +1,18 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.targeta_projecte{
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+aside{
+    padding: 1rem;
+    border-left: 4px solid #333;
+    background-color: #f5f5f5;
+}
