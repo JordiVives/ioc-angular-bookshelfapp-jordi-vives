@@ -4,7 +4,7 @@ BookShelfApp
 Jordi Vives
 
 # Descripció
-Aplicació feta amb Angular destinada a gestionar una biblioteca virtual, afegir/eliminar llibres, consultar-los i filtrar-los.
+Aplicació feta amb Angular destinada a gestionar una biblioteca virtual, permet afegir/eliminar llibres, consultar-los i filtrar-los per diferents paràmetres.
 
 # Versions utilitzades
 
@@ -25,7 +25,7 @@ Per executar l'aplicació:
 ng serve
 
 # Estat de l'EAC1
-Projecte base configurat i personalitzat tal i com s'indica en l'enunciat.
+Projecte base configurat i personalitzat tal i com indica l'enunciat.
 
 # Enllaç del repositori
 https://github.com/JordiVives/ioc-angular-bookshelfapp-jordi-vives
