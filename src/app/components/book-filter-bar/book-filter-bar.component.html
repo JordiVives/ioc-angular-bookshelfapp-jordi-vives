@@ -1,0 +1,28 @@
+<form #searchForm="ngForm" (ngSubmit)="ngSubmit()">
+    <label for="category">Filtra per categoria:</label>
+    <select id="category" name="category" [(ngModel)]="selectedCategory">
+    <option value="">Totes</option>
+    <option value="Fantasia">Fantasia</option>
+    <option value="Novel·la històrica">Novel·la històrica</option>
+    <option value="Ciència-ficció">Ciència-ficció</option>
+    <option value="Terror">Terror</option>
+    <option value="Misteri">Misteri</option>
+    <option value="Distopia">Distopia</option>
+    </select>
+    <p></p>
+    <label for="searchTitle">Filtra per Títol:</label>
+    <input id="searchTitle" type="text" 
+        name="searchTitle"
+        [(ngModel)]="searchTitle" 
+        placeholder="Filtra per títol" 
+        [required]="selectedCategory === ''"
+        minlength="3"
+        #titleControl="ngModel">
+       <p role="alert">
+         @if (titleControl.errors?.['minlength'] && titleControl.dirty) {
+            El títol ha de tenir almenys 3 caràcters.}
+        </p>
+    <p></p>
+    <button type="submit" [disabled]="searchForm.invalid">Aplicar Filtres</button>
+    <button type="button" (click)="searchForm.resetForm({category: '', searchTitle: ''}); clearSearch()">Neteja filtre</button>
+</form>

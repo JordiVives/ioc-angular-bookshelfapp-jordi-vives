@@ -1,4 +1,6 @@
-<main>
+<a href="#personal-library">Saltar a la Biblioteca Personal</a>
+
+<main >
     <h1>{{ appName }}</h1>
 
     <p>Aplicació feta amb Angular per Jordi Vives.</p>
@@ -12,7 +14,7 @@
             <li>Filtrar llibres per títol, autor o altres criteris.</li>
         </ul>
     </section>
-    <aside>
-      <p>Projecte base llest</p>
+    <aside id="personal-library" tabindex="-1">
+      <app-book-list [books]="books"></app-book-list>
     </aside>
 </main>

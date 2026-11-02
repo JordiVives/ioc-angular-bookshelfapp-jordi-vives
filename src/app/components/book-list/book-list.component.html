@@ -1,0 +1,28 @@
+<h1>BIBLIOTECA PERSONAL:</h1>
+<div class="book-list-container">
+    <section>
+        <app-book-filter-bar (filtersApplied)="applyFilters($event)"> </app-book-filter-bar>
+        @for (book of filteredBooks; track book.id) {
+            <app-book-card [book]="book" (bookSelected)="onBookSelected($event)"> </app-book-card>
+        }
+        <p role="status">
+            @if(foundBooksCount() === 0) {
+                No s'han trobat llibres.
+            } @else {
+                <strong>S'han trobat {{foundBooksCount()}} llibres.</strong>
+            }
+        </p>
+    </section>
+
+    @if(selectedBook) {
+        <section class="book-details">
+            <h2>Detalls del llibre</h2>
+            <p><strong>Títol:</strong> {{selectedBook.title}}</p>
+            <p><strong>Autor:</strong> {{selectedBook.author}}</p>
+            <p><strong>Categoria:</strong> {{selectedBook.category}}</p>
+            <p><strong>Descripció:</strong> {{selectedBook.description}}</p>
+            <p><strong>Any de publicació:</strong> {{selectedBook.publishedDate | date:'yyyy'}}</p>
+            <button type="button" (click)="closeBookDetails()">Tanca</button>
+        </section>
+    }
+</div>
